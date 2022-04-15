@@ -563,4 +563,4 @@ def toggle_collapse_6(n1, n2, is_open1, is_open2):
 
 
 if __name__=='__main__':
-    app.run_server(port=3000, debug=True, dev_tools_hot_reload=True)
+    app.run_server(host='0.0.0.0', port=3000)#, debug=True, dev_tools_hot_reload=True)
