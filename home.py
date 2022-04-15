@@ -4,9 +4,10 @@ import dash_bootstrap_components as dbc
 from dash import dcc
 from dash import html, callback
 from dash.dependencies import Input, Output, State
+import flask
 
-
-app = dash.Dash(__name__, suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.MATERIA])
+server = flask.Flask(__name__)
+app = dash.Dash(__name__, server = server, suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.MATERIA])
 
 _filename_1 = 'machine_image_1.jpeg' 
 _filename_2 = 'machine_image_2.jpeg'
@@ -562,5 +563,5 @@ def toggle_collapse_6(n1, n2, is_open1, is_open2):
     return False, False
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     app.run_server(host='0.0.0.0', port=3000)#, debug=True, dev_tools_hot_reload=True)
